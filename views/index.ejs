@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <Ul class = "pokemon">
-        <% for(let i =0; i < pokemon.length; i++){ %>
+    <Ul class = pokemon>
+        <% for(let i = 0; i < pokemon.length; i++){ %>
                 <li>
-            <a href = "/pokemon/<% = i %>"><%=pokemon[i].name; %></a>
+            <a href = "/pokemon/<%= i %>"><%=pokemon[i].name; %></a>
                 </li>
        <% } %>
     </Ul>
-
+  
 </body> 
-</html>
+</html>                                                                                    

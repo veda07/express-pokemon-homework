@@ -8,34 +8,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-const pokemon = require('./pokemon');
-
-app.get('/pokemon', function(req, res) {
-    res.send(pokemon);
-  });
+const Pokemon = require('./pokemon');
 // index route
- app.get('/pokemon', function(req, res){
-    res.render('index.js', {
-        "pokemon": pokemon 
-    });
- });  
+app.get('/pokemon',(req, res) => {
+  res.render('index.ejs', {
+    "pokemon": Pokemon
+  });
+});
 
  // show route
-app.get('/pokemon/:id', function(req, res) {
+app.get('/pokemon/:id', (req, res) => {
     res.render('show.ejs', {
-      "pokemon" : pokemon[req.params.id]
+      "pokemon" : Pokemon[req.params.id]
    });
   });
-
-
-
-
-
-
-
-
-
-
+  
 
 
 
@@ -48,4 +35,4 @@ app.get('/pokemon/:id', function(req, res) {
 app.listen(port, function() {
     console.log("App is running on port: ", port);
   });
-  
+  module.exports = app;
